@@ -1,0 +1,357 @@
+body {
+  background: linear-gradient(
+    to bottom,
+    #676570 0%,
+    #383842 50%,
+    #0B111F 100%
+  );
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+
+h3 {
+  padding: 10px;
+}
+
+.container {
+  background: #fff;
+  border-radius: 100px;
+  padding: 20px;
+  width: 40%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.header-logo {
+  width: 80%;
+  height: auto;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.app-logo {
+  width: 15%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.country-flag-container {
+  display: flex;
+  flex-direction: column; /* Ensure country flags are above each other */
+  align-items: center;
+  margin-bottom: 10px;
+  width: 150px; /* Increase the width of the country flag container */
+}
+
+#country-flag {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: url('arrow-down.png') no-repeat 95% center;
+  margin-right: 5px;
+  width: 100%; /* Occupy the entire width */
+  font-size: 25px;
+  text-align: center; /* Center the flag emojis */
+}
+
+.phone-number-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+#country-code,
+#country-code1 {
+  width: 100%; /* Make the country code containers the same width */
+}
+
+#phoneNumber,
+#phoneNumber1 {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#submit-button {
+  width: 60%;
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  background: #5A5A62;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#submit-button img {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    width: 80%;
+    padding: 20px;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  .header-logo {
+    width: 60%;
+    padding: 20px;
+  }
+
+  .app-logo {
+    width: 30%;
+    margin-bottom: 10px;
+  }
+
+  #country-code,
+  #country-code1 {
+    width: 100%; /* Maintain the width of country code containers in mobile mode */
+  }
+
+  #country-flag {
+    font-size: 18px;
+  }
+
+  #phoneNumber,
+  #phoneNumber1 {
+    font-size: 18px;
+    padding: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  #submit-button {
+    width: 70%;
+    padding: 15px;
+    border-radius: 100px;
+    font-size: 15px;
+  }
+
+  .error-message {
+    font-size: 16px;
+  }
+
+  /* Style for the radio boxes */
+  .radio-box {
+    display: flex;
+    flex-direction: row;
+    /* Arrange radio buttons horizontally */
+    align-items: center;
+    /* Center radio buttons vertically */
+  }
+
+  .radio-box label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  .radio-box img {
+    width: 50px;
+    height: 50px;
+  }
+  .radio-box input[type="radio"] {
+    display: none;
+  }
+  
+}
+
+.radio-box label::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border: 2px solid #128C7E;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.radio-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.radio-box label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.radio-box img {
+  width: 50px;
+  height: 50px;
+}
+
+.radio-box input[type="radio"] {
+  display: none;
+}
+
+/* Style for selected and enabled radio buttons */
+.radio-box input[type="radio"]:checked:not(:disabled) + label::before {
+  background-color: #13a031;
+  border-color: #13a031;
+}
+
+/* Style for disabled radio buttons */
+.radio-box input[type="radio"]:disabled + label {
+  color: #cccccc0e;
+  cursor: not-allowed;
+}
+
+.radio-box input[type="radio"]:disabled + label::before {
+  border-color: #cccccc28;
+  background-color: #cccccc0e;
+}
+
+.radio-box input[type="radio"]:disabled:checked + label::before {
+  background-color: #cccccc0e;
+}
+
+/* Your CSS styles here */
+/* ... */
+
+/* Style for pop-up messages */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup h2 {
+  color: #13a031; /* Green title */
+}
+
+.popup button {
+  background-color: #ff0000; /* Red button background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+/* ... Your existing CSS rules ... */
+
+.country-flag-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#country-flag {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: url('arrow-down.png') no-repeat 95% center;
+  margin-right: 5px;
+  width: 150px; /* Adjust the width as needed */
+  font-size: 25px; /* Increase font size if needed */
+  text-align: center; /* Center the flag emojis */
+}
+
+#country-flag::-ms-expand {
+  display: none;
+}
+
+#country-flag option {
+  padding-left: 5px;
+}
+
+.popup button {
+  background-color: #ff0000; /* Red button background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+/* Your existing CSS rules */
+
+/* Media Query for screen sizes between 576px and 1000px */
+@media (min-width: 577px) and (max-width: 1000px) {
+  .radio-box {
+    flex-direction: row; /* Arrange radio buttons horizontally */
+    flex-wrap: wrap; /* Allow wrapping of radio buttons */
+  }
+
+  .radio-box label {
+    flex-basis: calc(50% - 10px); /* Set the width of each radio button to 50% with spacing */
+  }
+}
